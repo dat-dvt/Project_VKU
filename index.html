@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh toán tiền điện - VKU Admin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/grid.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+<body>
+    <div class="main grid">
+        <!-- Header -->
+        <header class="header">
+            <div class="header__sidebar">
+                <a href="./home.html" class="header__sidebar-logo">VKU</a>
+            </div>
+            <div class="header__container">
+                <button class="header__container-btn btn--expand">
+                    <i class="fas fa-bars header__btn-icon"></i>
+                </button>
+                <button class="header__container-btn btn--user">
+                    <i class="fas fa-user header__btn-icon"></i>
+                </button>
+            </div>
+        </header>
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar__nav">
+                <div class="sidebar__nav-item">
+                    <div class="sidebar__item-container">
+                        <a href="#" class="sidebar__container-link">
+                            <i class="fa fa-edit sidebar__container-icon"></i>
+                            <span class="sidebar__container-content">Biểu mẫu</span>
+                        </a>
+                        <i class="fas fa-chevron-right sidebar__item-icon btn--expand-subnav"></i>
+                    </div>
+                    <div class="sidebar__subnav">
+                        <div class="sidebar__subnav-item">
+                            <a href="#" class="subnav__container-link">
+                                <span class="subnav__item-icon">
+                                    <i class="fas fa-angle-right"></i>
+                                </span>
+                                <span class="subnav__item-content">Đăng ký nội trú KTX</span>
+                            </a>
+                        </div>
+                        <div class="sidebar__subnav-item">
+                            <a href="#" class="subnav__container-link">
+                                <span class="subnav__item-icon">
+                                    <i class="fas fa-angle-right"></i>
+                                </span>
+                                <span class="subnav__item-content">Thanh toán tiền phòng</span>
+                            </a>
+                        </div>
+                        <div class="sidebar__subnav-item">
+                            <a href="#" class="subnav__container-link">
+                                <span class="subnav__item-icon">
+                                    <i class="fas fa-angle-right"></i>
+                                </span>
+                                <span class="subnav__item-content">Thanh toán tiền điện</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar__nav-item">
+                    <div class="sidebar__item-container">
+                        <a href="#" class="sidebar__container-link">
+                            <i class="far fa-file-code sidebar__container-icon" style="font-size: 2.2rem;"></i>
+                            <span class="sidebar__container-content">Hướng dẫn</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Container -->
+        <div class="container tab-home mb-60 active" id="tab-home">
+            <div class="container__header mb-30">
+                <div>
+                    <div class="container__header-logo">
+                        <i class="fas fa-home container__header-logo-icon"></i>
+                        <div class="container__header-logo-content">&nbsp;Trang chủ</div>
+                    </div>
+                    <p class="container__header-description">Trang web của Trường Đại Học CNTT và Truyền Thông Việt Hàn</p>
+                </div>
+            </div>
+            <div class="container__section">
+                <div class="container__section-content">
+                    <div class="container__content-logo">
+                        <div class="container__content-logo-img" style="background: url('./assets/img/background/background.jpg') no-repeat center center / cover"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mb-60">
+            <div class="container__header mb-30">
+                <div>
+                    <div class="container__header-logo">
+                        <i class="fas fa-edit container__header-logo-icon"></i>
+                        <div class="container__header-logo-content">&nbsp;Đăng ký nội trú</div>
+                    </div>
+                    <p class="container__header-description">Đơn đăng ký nội trú dành cho sinh viên</p>
+                </div>
+                <ul class="container__breadcrumb">
+                    <li class="breadcrumb__item">
+                        <i class="fas fa-home"></i>
+                        <span>/</span>
+                    </li>
+                    <li class="breadcrumb__item">
+                        Biểu mẫu
+                        <span>/</span>
+                    </li>
+                    <li class="breadcrumb__item">
+                        <a href="#" class="breadcrumb__item-link is-ghost">Đăng ký nội trú</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="container__section mb-30">
+                <div class="container__section-content">
+                    <div class="content__noti">
+                        <div class="content__noti-message">
+                            <i class="fas fa-exclamation-circle content__noti-message-icon"></i>
+                            <span>Chưa tới đợt đăng ký KTX mới</span>
+                        </div>
+                        <p class="content__noti-description">Vui lòng truy cập để biết thêm thông tin:</p>
+                        <ul class="content__noti-list">
+                            <li class="content__noti-item">
+                                <span>Website:</span>
+                                <a class="content__noti-link is-ghost" href="http://ktx.ueh.edu.vn">http://ktx.ueh.edu.vn</a>
+                            </li>
+                            <li class="content__noti-item">
+                                <span>Fanpage:</span>
+                                <a class="content__noti-link is-ghost" href="https://www.facebook.com/BQLKTX.UEH">https://www.facebook.com/BQLKTX.UEH</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="container__section">
+                <div class="container__section-content">
+                    <form action="POST" class="grid content__form" id="register-form">
+                        <div class="container__section-container has-border mb-26">
+                            <h2 class="section__header-title">Biểu mẫu đăng ký nội trú</h2>
+                        </div>
+                        <div class="container__section-container has-border mb-26">
+                            <div class="grid">
+                                <h3 class="form__heading">Thông tin sinh viên</h3>
+                                <div class="row">
+                                    <div class="col l-6 m-12 c-12 mb-16">
+                                        <div class="form-group">
+                                            <label for="studentid" class="form-label mb-8">Mã số sinh viên</label>
+                                            <input id="studentid" name="studentid" type="text" placeholder="Mã số sinh viên" rules="required" class="form-control">
+                                            <span class="form-message"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col l-6 m-12 c-12 mb-16">
+                                        <div class="form-group">
+                                            <label for="fullname" class="form-label mb-8">Họ Tên</label>
+                                            <input id="fullname" name="fullname" type="text" placeholder="Họ và tên" rules="required" class="form-control">
+                                            <span class="form-message"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col l-6 m-12 c-12 mb-16">
+                                        <div class="form-group">
+                                            <label for="date" class="form-label mb-8">Ngày sinh</label>
+                                            <input id="date" name="date" type="text" placeholder="Ngày sinh" rules="required" class="form-control">
+                                            <span class="form-message"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col l-6 m-12 c-12 mb-16">
+                                        <div class="form-group">
+                                            <label for="" class="form-label">Giới tính</label>
+                                            <div>
+                                                <input name="gender" id="male" type="radio" value="male" rules="required" class="form-control">
+                                                <label for="male" class="form--radio-label">Nam</label>
+                                            </div>
+                                            <div>
+                                                <input name="gender" id="female" type="radio" value="female" rules="required" class="form-control">
+                                                <label for="female" class="form--radio-label">Nữ</label>
+                                            </div>
+                                            <span class="form-message"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col l-6 m-12 c-12 mb-16">
+                                        <div class="form-group">
+                                            <label for="grade" class="form-label mb-8">Khóa</label>
+                                            <input id="grade" name="grade" type="text" placeholder="Khóa" rules="required" class="form-control is-grey">
+                                            <span class="form-message"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col l-6 m-12 c-12 mb-16">
+                                        <div class="form-group">
+                                            <label for="faculty" class="form-label mb-8">Khoa</label>
+                                            <input id="faculty" name="faculty" type="text" placeholder="Khoa" rules="required" class="form-control is-grey">
+                                            <span class="form-message"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col l-6 m-12 c-12 mb-16">
+                                        <div class="form-group">
+                                            <label for="class" class="form-label mb-8">Lớp</label>
+                                            <input id="class" name="class" type="text" placeholder="Lớp" rules="required" class="form-control is-grey">
+                                            <span class="form-message"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col l-6 m-12 c-12 mb-16">
+                                        <div class="form-group">
+                                            <label for="email" class="form-label mb-8">Email</label>
+                                            <input id="email" name="email" type="email" placeholder="Email" rules="required|email" class="form-control is-grey">
+                                            <span class="form-message"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col l-6 m-12 c-12 mb-16">
+                                        <div class="form-group">
+                                            <label for="idcard" class="form-label mb-8">CMND/CCCD</label>
+                                            <input id="idcard" name="idcard" type="text" placeholder="CMND/CCCD" rules="required|idcard" class="form-control">
+                                            <span class="form-message"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col l-6 m-12 c-12 mb-16">
+                                        <div class="form-group">
+                                            <label for="datestart" class="form-label mb-8">Ngày Cấp</label>
+                                            <input id="datestart" name="datestart" type="text" placeholder="DD/MM/YYYY" rules="required" class="form-control">
+                                            <span class="form-message"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col l-6 m-12 c-12 mb-16">
+                                        <div class="form-group">
+                                            <label for="place" class="form-label mb-8">Nơi Cấp</label>
+                                            <select id="place" name="place" rules="required" class="form-control">
+                                                <option value="">Chọn nơi cấp...</option>
+                                                <option value="hni">Hà Nội</option>
+                                                <option value="hpg">Hải Phòng</option>
+                                            </select>
+                                            <span class="form-message"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col l-6 m-12 c-12 mb-16">
+                                        <div class="form-group">
+                                            <label for="phone" class="form-label mb-8">Điện Thoại</label>
+                                            <input id="phone" name="phone" type="tel" placeholder="Điện Thoại" rules="required|phone" class="form-control">
+                                            <span class="form-message"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col l-6 m-12 c-12 mb-16">
+                                        <div class="form-group">
+                                            <label for="ethnic" class="form-label mb-8">Dân Tộc</label>
+                                            <select id="ethnic" name="ethnic" rules="required" class="form-control">
+                                                <option value="">Chọn dân tộc...</option>
+                                            </select>
+                                            <span class="form-message"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col l-6 m-12 c-12 mb-16">
+                                        <div class="form-group">
+                                            <label for="religion" class="form-label mb-8">Tôn Giáo</label>
+                                            <select id="religion" name="religion" rules="required" class="form-control">
+                                                <option value="">Chọn tôn giáo...</option>
+                                            </select>
+                                            <span class="form-message"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col l-6 m-12 c-12 mb-16">
+                                        <div class="form-group">
+                                            <label for="province" class="form-label mb-8">TP/Tỉnh</label>
+                                            <select id="province" name="province" rules="required" class="form-control">
+                                                <option value="">Chọn TP/Tỉnh...</option>
+                                            </select>
+                                            <span class="form-message"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col l-6 m-12 c-12 mb-16">
+                                        <div class="form-group">
+                                            <label for="district" class="form-label mb-8">Quận/Huyện/Thị trấn</label>
+                                            <select id="district" name="district" rules="required" class="form-control">
+                                                <option value="">Chọn Quận/Huyện/Thị trấn...</option>
+                                            </select>
+                                            <span class="form-message"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col l-6 m-12 c-12 mb-16">
+                                        <div class="form-group">
+                                            <label for="ward" class="form-label mb-8">Phường/Xã/Ấp</label>
+                                            <select id="ward" name="ward" rules="required" class="form-control">
+                                                <option value="">Chọn Phường/Xã/Ấp...</option>
+                                            </select>
+                                            <span class="form-message"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col l-6 m-12 c-12 mb-16">
+                                        <div class="form-group">
+                                            <label for="address" class="form-label mb-8">Địa Chỉ Thường Trú</label>
+                                            <input id="address" name="address" type="text" placeholder="Số nhà, Tên đường" rules="required" class="form-control">
+                                            <span class="form-message"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container__section-container has-border mb-26">
+                            <div class="grid">
+                                <h3 class="form__heading">Thông tin người thân</h3>
+                                <div class="row">
+                                    <div class="col l-6 m-12 c-12 mb-16">
+                                        <div class="form-group">
+                                            <label for="relativefullname" class="form-label mb-8">Họ Tên</label>
+                                            <input id="relativefullname" name="relativefullname" type="text" placeholder="Họ và tên" rules="required" class="form-control">
+                                            <span class="form-message"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col l-6 m-12 c-12 mb-16">
+                                        <div class="form-group">
+                                            <label for="relative" class="form-label mb-8">Quan hệ</label>
+                                            <select id="relative" name="relative" rules="required" class="form-control">
+                                                <option value="">Chọn quan hệ người thân...</option>
+                                            </select>
+                                            <span class="form-message"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col l-6 m-12 c-12 mb-16">
+                                        <div class="form-group">
+                                            <label for="relativephone" class="form-label mb-8">Điện Thoại</label>
+                                            <input id="relativephone" name="relativephone" type="tel" placeholder="Điện Thoại" rules="required|phone" class="form-control">
+                                            <span class="form-message"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col l-6 m-12 c-12 mb-16">
+                                        <div class="form-group">
+                                            <label for="relativeaddress" class="form-label mb-8">Địa chỉ thường trú</label>
+                                            <input id="relativeaddress" name="relativeaddress" type="text" placeholder="Địa chỉ" rules="required" class="form-control">
+                                            <span class="form-message"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container__section-container has-border mb-26">
+                            <div class="grid">
+                                <h3 class="form__heading">Đối Tượng Ưu Tiên</h3>
+                                <div class="row mt-30">
+                                    <div class="col l-12 m-12 c-12 mb-16">
+                                        <div class="form-group ful-width">
+                                            <div class="form-group__checkbox">
+                                                <input name="gender" id="opt1" type="checkbox" class="form-control mt-4">
+                                                <label for="opt1" class="form--checkbox-label">
+                                                    <h4 class="form-label__title">Ưu tiên 1:&nbsp;</h4>
+                                                    <span class="form-label__description">Bản thân Sinh viên là: Anh hùng lực lượng vũ trang nhân dân, anh hùng lao động, thương binh, bệnh binh, người hưởng chính sách như thương binh, sinh viên khuyết tật;</span>
+                                                </label>
+                                            </div>
+                                            <span class="form-message"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col l-12 m-12 c-12 mb-16">
+                                        <div class="form-group ful-width">
+                                            <div class="form-group__checkbox">
+                                                <input name="gender" id="opt2" type="checkbox" class="form-control mt-4">
+                                                <label for="opt2" class="form--checkbox-label">
+                                                    <h4 class="form-label__title">Ưu tiên 2:&nbsp;</h4>
+                                                    <span class="form-label__description"> Sinh viên là: Con liệt sỹ, con thương binh, con bệnh binh, con của người hưởng chính sách như thương binh, con của người có công;</span>
+                                                </label>
+                                            </div>
+                                            <span class="form-message"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col l-12 m-12 c-12 mb-16">
+                                        <div class="form-group ful-width">
+                                            <div class="form-group__checkbox">
+                                                <input name="gender" id="opt3" type="checkbox" class="form-control mt-4">
+                                                <label for="opt3" class="form--checkbox-label">
+                                                    <h4 class="form-label__title">Ưu tiên 3:&nbsp;</h4>
+                                                    <span class="form-label__description"> Sinh viên có hộ khẩu thường trú tại vùng cao, vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn;</span>
+                                                </label>
+                                            </div>
+                                            <span class="form-message"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col l-12 m-12 c-12 mb-16">
+                                        <div class="form-group ful-width">
+                                            <div class="form-group__checkbox">
+                                                <input name="gender" id="opt4" type="checkbox" class="form-control mt-4">
+                                                <label for="opt4" class="form--checkbox-label">
+                                                    <h4 class="form-label__title">Ưu tiên 4:&nbsp;</h4>
+                                                    <span class="form-label__description"> Sinh viên có cha hoặc mẹ là người dân tộc thiểu số;</span>
+                                                </label>
+                                            </div>
+                                            <span class="form-message"></span>
+                                        </div>
+                                    </div><div class="col l-12 m-12 c-12 mb-16">
+                                        <div class="form-group ful-width">
+                                            <div class="form-group__checkbox">
+                                                <input name="gender" id="opt5" type="checkbox" class="form-control mt-4">
+                                                <label for="opt5" class="form--checkbox-label">
+                                                    <h4 class="form-label__title">Ưu tiên 5:&nbsp;</h4>
+                                                    <span class="form-label__description"> Sinh viên mồ côi cả cha và mẹ;</span>
+                                                </label>
+                                            </div>
+                                            <span class="form-message"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col l-12 m-12 c-12 mb-16">
+                                        <div class="form-group ful-width">
+                                            <div class="form-group__checkbox">
+                                                <input name="gender" id="opt6" type="checkbox" class="form-control mt-4">
+                                                <label for="opt6" class="form--checkbox-label">
+                                                    <h4 class="form-label__title">Ưu tiên 6:&nbsp;</h4>
+                                                    <span class="form-label__description"> Sinh viên là con hộ nghèo, hộ cận nghèo theo quy định hiện hành của Nhà nước;</span>
+                                                </label>
+                                            </div>
+                                            <span class="form-message"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col l-12 m-12 c-12 mb-16">
+                                        <div class="form-group ful-width">
+                                            <div class="form-group__checkbox">
+                                                <input name="gender" id="opt7" type="checkbox" class="form-control mt-4">
+                                                <label for="opt7" class="form--checkbox-label">
+                                                    <h4 class="form-label__title">Ưu tiên 7:&nbsp;</h4>
+                                                    <span class="form-label__description"> Sinh viên tích cực tham gia các hoạt động do nhà trường, Đoàn TNCS Hồ Chí Minh, Hội sinh viên, khu nội trú hoặc các tổ chức xã hội tổ chức;</span>
+                                                </label>
+                                            </div>
+                                            <span class="form-message"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col l-12 m-12 c-12 mb-16">
+                                        <div class="form-group ful-width">
+                                            <div class="form-group__checkbox">
+                                                <input name="gender" id="opt8" type="checkbox" class="form-control mt-4">
+                                                <label for="opt8" class="form--checkbox-label">
+                                                    <h4 class="form-label__title">Ưu tiên 8:&nbsp;</h4>
+                                                    <span class="form-label__description"> Sinh viên các chương trình đào tạo (Chất lượng cao, Cử nhân tài năng);</span>
+                                                </label>
+                                            </div>
+                                            <span class="form-message"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col l-12 m-12 c-12 mb-16">
+                                        <div class="form-group ful-width">
+                                            <div class="form-group__checkbox">
+                                                <input name="gender" id="opt9" type="checkbox" class="form-control mt-4">
+                                                <label for="opt9" class="form--checkbox-label">
+                                                    <h4 class="form-label__title">Ưu tiên 9:&nbsp;</h4>
+                                                    <span class="form-label__description"> Các trường hợp khác.</span>
+                                                </label>
+                                            </div>
+                                            <span class="form-message"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container__section-container has-border mb-26">
+                            <div class="grid">
+                                <h3 class="form__heading">Đăng ký Ký túc xá</h3>
+                                <div class="row">
+                                    <div class="col l-6 m-12 c-12 mb-16">
+                                        <div class="form-group">
+                                            <label for="dormitory" class="form-label mb-8">Chọn Ký túc xá</label>
+                                            <select id="dormitory" name="dormitory" rules="required" class="form-control">
+                                                <option value="">Chọn Ký túc xá...</option>
+                                            </select>
+                                            <span class="form-message"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container__section-submit mb-20">
+                            <button class="btn form-btn form-btn--submit">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Đăng ký</span>
+                            </button>
+                            <label for="reset-btn" class="btn form-btn form-btn--reset">
+                                <i class="fas fa-times-circle"></i>
+                                <span for="reset-btn" class="reset-btn__label">Hủy</span>
+                            </label>
+                            <input type="reset" style="display: none;" id="reset-btn" class="form-reset">
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="container mb-60">
+            <div class="container__header mb-30">
+                <div>
+                    <div class="container__header-logo">
+                        <i class="fas fa-dollar-sign container__header-logo-icon"></i>
+                        <div class="container__header-logo-content">&nbsp;Thanh toán tiền phòng</div>
+                    </div>
+                    <p class="container__header-description">Thanh toán theo từng sinh viên nội trú</p>
+                </div>
+                <ul class="container__breadcrumb">
+                    <li class="breadcrumb__item">
+                        <i class="fas fa-home"></i>
+                        <span>/</span>
+                    </li>
+                    <li class="breadcrumb__item">
+                        Biểu mẫu
+                        <span>/</span>
+                    </li>
+                    <li class="breadcrumb__item">
+                        <a href="#" class="breadcrumb__item-link is-ghost">Thanh toán tiền phòng</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="container__section">
+                <div class="container__section-content">
+                    <form action="POST" class="grid content__form" id="search-form">
+                        <div class="container__section-container mb-16">
+                            <div class="grid">
+                                <div class="row">
+                                    <div class="col l-4 m-12 c-12">
+                                        <div class="form-group">
+                                            <label for="searchid" class="form-label mb-8">Tìm theo MSSV</label>
+                                            <input id="searchid" name="searchid" type="text" placeholder="MSSV" rules="required" class="form-control">
+                                            <span class="form-message"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col l-4 m-12 c-12">
+                                        <div class="container__section-submit">
+                                            <button class="btn form-btn form-btn--submit mt-36">
+                                                <i class="fas fa-search"></i>
+                                                <span>Tìm kiếm</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="container mb-60">
+            <div class="container__header mb-30">
+                <div>
+                    <div class="container__header-logo">
+                        <i class="fas fa-dollar-sign container__header-logo-icon"></i>
+                        <div class="container__header-logo-content">&nbsp;Thanh toán tiền điện</div>
+                    </div>
+                    <p class="container__header-description">Thanh toán theo từng phòng</p>
+                </div>
+                <ul class="container__breadcrumb">
+                    <li class="breadcrumb__item">
+                        <i class="fas fa-home"></i>
+                        <span>/</span>
+                    </li>
+                    <li class="breadcrumb__item">
+                        Biểu mẫu
+                        <span>/</span>
+                    </li>
+                    <li class="breadcrumb__item">
+                        <a href="#" class="breadcrumb__item-link is-ghost">Thanh toán tiền điện</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="container__section">
+                <div class="container__section-content">
+                    <form action="POST" class="grid content__form" id="search-dormitory-form">
+                        <div class="container__section-container mb-16">
+                            <div class="grid">
+                                <div class="row">
+                                    <div class="col l-5 m-12 c-12">
+                                        <div class="form-group">
+                                            <label for="searchdormitory" class="form-label mb-8">Ký túc xá</label>
+                                            <select id="searchdormitory" name="searchdormitory" rules="required" class="form-control">
+                                                <option value="1">Ký túc xá Trần Hưng Đạo</option>
+                                                <option value="2">Ký túc xá Nguyễn Chí Thanh</option>
+                                                <option value="3">Ký túc xá Vĩnh Long</option>
+                                            </select>
+                                            <span class="form-message"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col l-3 m-12 c-12 mb-16">
+                                        <div class="form-group">
+                                            <label for="searchroom" class="form-label mb-8">Phòng</label>
+                                            <input id="searchroom" name="searchroom" type="text" placeholder="Phòng" rules="required" class="form-control">
+                                            <span class="form-message"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col l-4 m-12 c-12">
+                                        <div class="container__section-submit">
+                                            <button class="btn form-btn form-btn--submit mt-36">
+                                                <i class="fas fa-search"></i>
+                                                <span>Tìm kiếm</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="container mb-60">
+            <div class="container__header mb-30">
+                <div>
+                    <div class="container__header-logo">
+                        <i class="far fa-file-code container__header-logo-icon"></i>
+                        <div class="container__header-logo-content">&nbsp;Hướng dẫn</div>
+                    </div>
+                    <p class="container__header-description">Hướng dẫn sử dụng trang web Ký túc xá VKU</p>
+                </div>
+                <ul class="container__breadcrumb">
+                    <li class="breadcrumb__item">
+                        <i class="fas fa-home"></i>
+                        <span>/</span>
+                    </li>
+                    <li class="breadcrumb__item">
+                        <a href="#" class="breadcrumb__item-link is-ghost">Hướng dẫn</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="container__section">
+                <div class="container__section-content">
+                    <div class="container__section-container mb-16">
+                        <div class="grid">
+                            <div class="row">
+                                <div class="col l-12 m-12 c-12">
+                                    <ul class="section__instruction mb-16">
+                                        <li class="section__instruction-item">
+                                            <a href="./assets/instruction/instruction1.pdf" download="HƯỚNG DẪN ĐĂNG KÝ NỘI TRÚ" class="section__instruction-link is-ghost">
+                                                HƯỚNG DẪN ĐĂNG KÝ NỘI TRÚ
+                                            </a>
+                                        </li>
+                                        <li class="section__instruction-item">
+                                            <a href="./assets/instruction/instruction2.pdf" download="HƯỚNG DẪN ĐÓNG NỘI TRÚ PHÍ" class="section__instruction-link is-ghost">
+                                                HƯỚNG DẪN ĐÓNG NỘI TRÚ PHÍ
+                                            </a>
+                                        </li>
+                                        <li class="section__instruction-item">
+                                            <a href="./assets/instruction/instruction3.pdf" download="HƯỚNG DẪN ĐÓNG TIỀN ĐIỆN NƯỚC" class="section__instruction-link is-ghost">
+                                                HƯỚNG DẪN ĐÓNG TIỀN ĐIỆN NƯỚC
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/validator.js"></script>
+    <script src="./js/main.js"></script>
+    
+    <script>
+        // Validate form
+        var registerForm = new Validator('#register-form');
+        var searchForm = new Validator('#search-form')
+        var searchDormitoryForm = new Validator('#search-dormitory-form')
+    </script>
+
+</body>
+</html>

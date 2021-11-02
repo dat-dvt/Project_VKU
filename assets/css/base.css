@@ -1,0 +1,99 @@
+:root {
+    --black-color: #000;
+    --btn-hover-color: #00635a;
+    --primary-color: #009688;
+    --sidebar-bg: #222d32;
+    --text-color: #212529;
+    --white-color: #fff;
+    --header-height: 50px;
+    --subnav-height: 0;
+    --sidebar-width: 250px;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    box-sizing: border-box;
+    font-family: "Bookman, Tahoma, Verdana", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+    background-color: #e5e5e5;
+}
+
+i {
+    display: inline-block;
+}
+
+.ful-width {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.is-ghost:hover {
+    color: #004a43 !important;
+    text-decoration: underline !important;
+}
+
+.is-grey {
+    background-color: #e9ecef !important;
+}
+
+.mt-4 {
+    margin-top: 4px !important;
+}
+
+.mt-30 {
+    margin-top: 30px !important;
+}
+
+.mt-36 {
+    margin-top: 36px !important;
+}
+
+
+.mb-4 {
+    margin-bottom: 4px !important;
+}
+
+.mb-8 {
+    margin-bottom: 8px !important;
+}
+
+.mb-16 {
+    margin-bottom: 16px !important;
+}
+
+.mb-20 {
+    margin-bottom: 20px !important;
+}
+
+.mb-26 {
+    margin-bottom: 26px !important;
+}
+
+.mb-30 {
+    margin-bottom: 30px !important;
+}
+
+.mb-60 {
+    margin-bottom: 60px !important;
+}
+
+.btn {
+    outline: none;
+    cursor: pointer;
+    user-select: none;
+    height: fit-content;
+
+}
+
+.btn:hover {
+
+}
+
+
