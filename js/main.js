@@ -1,3 +1,6 @@
+const VKU_STORAGE_KEY = 'VKU'
+
+
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
@@ -7,17 +10,26 @@ const main = $('.main')
 const tabContainers = Array.from($$('.container'))
 const sidebarItems = $$('.sidebar__nav-item')
 const sidebarSubnav = $('.sidebar__subnav')
+const sidebar = $('.sidebar')
 const subnavItems = Array.from($$('.sidebar__subnav-item'))
 const expandSubnavBtn = $('.sidebar__item-icon.btn--expand-subnav')
 const sidebarExpandBtn = $('.header__container-btn.btn--expand')
+const homeBtns = $$('.header__sidebar-logo')
 
 
 const app = {
     isShrinkSidebar: false,
+    isExpandSubnav: false,
     suvnavHeight: 0,
     currentTab: 0,
     currentSidebarWidth: 250,
 
+    config: JSON.parse(localStorage.getItem(VKU_STORAGE_KEY) || '{}'),
+
+    setConfig(key, value) {
+        this.config[key] = value
+        localStorage.setItem(VKU_STORAGE_KEY, JSON.stringify(this.config))
+    },
 
     calSubnavHeight() {
         return Array.from(subnavItems).reduce((acc, subnavItem) => {
@@ -29,129 +41,195 @@ const app = {
         const _this = this
 
 
-
+        // Handle expand sub navigation
         function expandSubnav() {
             if (!_this.isShrinkSidebar) {
                 sidebarSubnav.style.height = _this.calSubnavHeight() + 'px';
             }
+            sidebarSubnav.classList.add('expand')
+            expandSubnavBtn.classList.add('expand')
         }
 
+        // Handle close sub navigation
         function closeSubnav() {
             if (!_this.isShrinkSidebar) {
                 sidebarSubnav.style.height = 0;
             }
+            sidebarSubnav.classList.remove('expand')
+            expandSubnavBtn.classList.remove('expand')
         }
 
+
+        // Handle shrink sidebar
+        function shrinkSidebar() {
+            if(window.innerWidth >= 740) {
+                _this.currentSidebarWidth = 50;
+            } else {
+                _this.currentSidebarWidth = 0;
+            }
+            main.classList.add('has--shrink-sidebar')
+            document.documentElement.style.setProperty('--sidebar-width', _this.currentSidebarWidth + 'px')
+            sidebarSubnav.style.removeProperty('height')
+            
+            _this.isExpandSubnav = false
+            closeSubnav()
+        }
+
+        // Handle expand sidebar
+        function expandSidebar() {
+            main.classList.remove('has--shrink-sidebar')
+            _this.currentSidebarWidth = 250
+            document.documentElement.style.setProperty('--sidebar-width', _this.currentSidebarWidth + 'px')
+        }
+
+
+        // Handle switch tab
+        function handleSwichTab (currentTab) {
+            const activeTab = $('.container.active')
+            const activeItem = $('.sidebar__subnav-item.active')
+            const activeNavItems = $$('.sidebar__nav-item.active')
+            
+            
+            activeTab.classList.remove('active')
+            activeItem && activeItem.classList.remove('active')
+
+
+            tabContainers[currentTab].classList.add('active')
+
+
+            if(currentTab === tabContainers.length - 1) {
+                sidebarItems[0].classList.contains('active') && sidebarItems[0].classList.remove('active')
+                sidebarItems[1].classList.add('active')
+            } else if (currentTab === 0) {
+                activeNavItems.forEach(activeNavItem  => {
+                    activeNavItem.classList.remove('active')
+                })
+            } else {
+                sidebarItems[0].classList.add('active')
+                subnavItems[currentTab - 1].classList.add('active')
+                sidebarItems[1].classList.contains('active') && sidebarItems[1].classList.remove('active')
+            }
+            _this.setConfig('currentTab', currentTab)
+        }
 
         // Handle when click on sub navigation
         sidebarSubnav.onclick = function (e) {
             e.stopPropagation()
             const subnavItem = e.target.closest('.sidebar__subnav-item')
-            const activeItem = $('.sidebar__subnav-item.active')
-            const activeTab = $('.container.active')
 
-            activeItem && activeItem.classList.remove('active')
-            activeTab.classList.remove('active')
 
             _this.currentTab = subnavItems.indexOf(subnavItem) + 1
-            tabContainers[_this.currentTab].classList.add('active')
-
-            if (subnavItem) {
-                subnavItem.classList.toggle('active')
-            }
-
-            if (sidebarItems[1].classList.contains('active')) {
-                sidebarItems[1].classList.remove('active')
-            }
-
+            handleSwichTab(_this.currentTab)
         }
+
+
+        // Handle when click home button on header
+        homeBtns.forEach((homeBtn, index) => {
+            homeBtn.onclick = (e) => {
+                _this.currentTab = 0
+                handleSwichTab(_this.currentTab)
+
+                this.isExpandSubnav = false
+                closeSubnav()
+
+                if(index === 1) {
+                    this.isShrinkSidebar = true;
+                    shrinkSidebar()
+                }
+    
+            }
+        })
 
 
         // Handle when click on sidebar navigation
         sidebarItems.forEach((sidebarItem, index) => {
             if (index === 0) {
-                sidebarItem.onclick = function (e) {
-
-                    this.classList.add('active')
-                    sidebarSubnav.classList.toggle('expand')
-                    expandSubnavBtn.classList.toggle('expand')
-
-                    if (sidebarSubnav.classList.contains('expand')) {
-                        expandSubnav()
-                    } else {
-                        closeSubnav()
-                    }
+                // First sidebar navigation item
+                sidebarItem.onclick = (e) => {
+                    this.isExpandSubnav = !this.isExpandSubnav
+                    this.isExpandSubnav ? expandSubnav() : closeSubnav()
                 }
             }
             if (index === 1) {
-                sidebarItem.onclick = function (e) {
-                    const activeItem = $('.sidebar__nav-item.active')
-                    const activeSubnavItem = $('.sidebar__subnav-item.active')
-                    const activeTab = $('.container.active')
+                // Second sidebar navigation item
+                sidebarItem.onclick = (e) => {
+                    this.currentTab = tabContainers.length - 1
+                    handleSwichTab(this.currentTab)
 
 
-                    activeTab.classList.remove('active')
-                    activeItem && activeItem.classList.remove('active')
-                    activeSubnavItem && activeSubnavItem.classList.remove('active')
-
-                    _this.currentTab = tabContainers.length - 1
-                    tabContainers[_this.currentTab].classList.add('active')
-
-                    this.classList.add('active')
-                    sidebarSubnav.classList.remove('expand')
+                    this.isExpandSubnav = false
                     closeSubnav()
-                    expandSubnavBtn.classList.remove('expand')
                 }
             }
         })
 
-        // Handle when resize window
-        window.onresize = (e) => {
-            if(window.innerWidth >= 740) {
-                document.documentElement.style.setProperty('--sidebar-width', this.currentSidebarWidth + 'px')
-            } else {
-                document.documentElement.style.setProperty('--sidebar-width', 0)
-            }
-        }
+        
 
 
         // Handle expand and shrink sidebar
         sidebarExpandBtn.onclick = (e) => {
             this.isShrinkSidebar = !this.isShrinkSidebar
-            if (this.isShrinkSidebar === false) {
-                this.currentSidebarWidth = 250
-                document.documentElement.style.setProperty('--sidebar-width', this.currentSidebarWidth + 'px')
-            } else {
-                if(window.innerWidth >= 740) {
-                    this.currentSidebarWidth = 50;
-                    document.documentElement.style.setProperty('--sidebar-width', this.currentSidebarWidth + 'px')
-                } else {
-                    document.documentElement.style.setProperty('--sidebar-width', 0)
-                }
-                sidebarSubnav.style.removeProperty('height')
-                sidebarSubnav.classList.remove('expand')
-                expandSubnavBtn.classList.remove('expand')
-                closeSubnav()
-            }
-            main.classList.toggle('has--shrink-sidebar', this.isShirnkSidebar)
+            this.isShrinkSidebar ? shrinkSidebar() : expandSidebar()
         }
 
+        // Handle when hover on shrink navigation item
         sidebarItems[0].onmouseover = (e) => {
             document.documentElement.style.setProperty('--subnav-height', this.calSubnavHeight() + 'px')
         }
+
+        // Handle when resize window
+        window.onresize = (e) => {
+            if(window.innerWidth < 740) {
+                this.isShrinkSidebar = true;
+            } else {
+                this.isShrinkSidebar = false
+            }
+
+            this.isShrinkSidebar ? shrinkSidebar() : expandSidebar()
+        }
+
+        // Handle close sidebar when click on outside area of sidebar
+        document.onclick = (e) => {
+            const expandBtn = e.target.closest('.header__container-btn')
+            const sidebar = e.target.closest('.sidebar')
+            const headerHomeBtn = e.target.closest('.header__sidebar-logo')
+            if(!expandBtn && !sidebar && !headerHomeBtn) {
+                if(window.innerWidth < 740) {
+                    this.isShrinkSidebar = true;
+                    shrinkSidebar()
+                }
+            }
+        }
+
+        // Set up initial close sidebar when start
+        ;(function setUpInitial() {
+            document.documentElement.style.setProperty('--subnav-height', _this.calSubnavHeight() + 'px')
+            if(window.innerWidth < 740) {
+                sidebar.style.display = 'none';
+                setTimeout(function() {
+                    sidebar.style.display = 'initial';
+                }, 200)
+                _this.isShrinkSidebar = true;
+                shrinkSidebar()
+            }
+        })()
+        
+
+        // Handle load current tab
+        ;(function loadConfig() {
+            _this.currentTab = _this.config.currentTab || 0;
+            handleSwichTab(_this.currentTab)
+        })()
+
     },
 
+    
 
-    setUpInitial() {
-        document.documentElement.style.setProperty('--subnav-height', this.calSubnavHeight() + 'px')
-    },
+
 
 
 
     start() {
-        // Set up initial value
-        this.setUpInitial()
-
         // Listening / Handle DOM events
         this.handleEvents()
     }

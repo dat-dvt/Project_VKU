@@ -11,18 +11,22 @@
     <link rel="stylesheet" href="./assets/css/grid.css">
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
 </head>
 <body>
     <div class="main grid">
         <!-- Header -->
         <header class="header">
-            <div class="header__sidebar">
-                <a href="./home.html" class="header__sidebar-logo">VKU</a>
+            <div class="header__sidebar hide-on-mobile">
+                <a href="#" class="header__sidebar-logo">VKU</a>
             </div>
             <div class="header__container">
                 <button class="header__container-btn btn--expand">
                     <i class="fas fa-bars header__btn-icon"></i>
                 </button>
+                <div class="header__sidebar sub-header">
+                    <a href="#" class="header__sidebar-logo">VKU</a>
+                </div>
                 <button class="header__container-btn btn--user">
                     <i class="fas fa-user header__btn-icon"></i>
                 </button>
@@ -152,7 +156,7 @@
                                     <div class="col l-6 m-12 c-12 mb-16">
                                         <div class="form-group">
                                             <label for="studentid" class="form-label mb-8">Mã số sinh viên</label>
-                                            <input id="studentid" name="studentid" type="text" placeholder="Mã số sinh viên" rules="required" class="form-control">
+                                            <input id="studentid" name="studentid" type="number" placeholder="Mã số sinh viên" rules="required" class="form-control">
                                             <span class="form-message"></span>
                                         </div>
                                     </div>
@@ -215,7 +219,7 @@
                                     <div class="col l-6 m-12 c-12 mb-16">
                                         <div class="form-group">
                                             <label for="idcard" class="form-label mb-8">CMND/CCCD</label>
-                                            <input id="idcard" name="idcard" type="text" placeholder="CMND/CCCD" rules="required|idcard" class="form-control">
+                                            <input id="idcard" name="idcard" type="number" placeholder="CMND/CCCD" rules="required|idcard" class="form-control">
                                             <span class="form-message"></span>
                                         </div>
                                     </div>
@@ -515,7 +519,7 @@
                                     <div class="col l-4 m-12 c-12">
                                         <div class="form-group">
                                             <label for="searchid" class="form-label mb-8">Tìm theo MSSV</label>
-                                            <input id="searchid" name="searchid" type="text" placeholder="MSSV" rules="required" class="form-control">
+                                            <input id="searchid" name="searchid" type="number" placeholder="MSSV" rules="required" class="form-control">
                                             <span class="form-message"></span>
                                         </div>
                                     </div>
@@ -635,8 +639,8 @@
                                             </a>
                                         </li>
                                         <li class="section__instruction-item">
-                                            <a href="./assets/instruction/instruction3.pdf" download="HƯỚNG DẪN ĐÓNG TIỀN ĐIỆN NƯỚC" class="section__instruction-link is-ghost">
-                                                HƯỚNG DẪN ĐÓNG TIỀN ĐIỆN NƯỚC
+                                            <a href="./assets/instruction/instruction3.pdf" download="HƯỚNG DẪN ĐÓNG TIỀN ĐIỆN" class="section__instruction-link is-ghost">
+                                                HƯỚNG DẪN ĐÓNG TIỀN ĐIỆN
                                             </a>
                                         </li>
                                     </ul>

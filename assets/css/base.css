@@ -19,10 +19,12 @@ html {
     line-height: 1.6rem;
     box-sizing: border-box;
     font-family: "Bookman, Tahoma, Verdana", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: subpixel-antialiased;
 }
 
 body {
     background-color: #e5e5e5;
+    -webkit-tap-highlight-color: transparent;
 }
 
 i {

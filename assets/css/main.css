@@ -16,12 +16,18 @@
     height: var(--header-height);
     background-color: var(--primary-color);
 }
-.header__sidebar{
+
+.header__sidebar {
     height: 100%;
     display: flex;
     width: 250px;
     background-color: #007d71;
 }
+
+.sub-header {
+    display: none;
+}
+
 .header__sidebar-logo {
     margin: auto;
     cursor: pointer;
@@ -140,7 +146,7 @@
 
 
 
-.main.has--shrink-sidebar .sidebar__nav-item:hover .sidebar__subnav{
+.main.has--shrink-sidebar .sidebar__nav-item:hover .sidebar__subnav {
     top: 100%;
     left: 100%;
     width: 180px;
@@ -270,7 +276,7 @@
     display: none;
     margin-top: var(--header-height);
     margin-left: var(--sidebar-width);
-    transition: margin-left 0.2s linear;
+    transition: margin-left 0.2s linear, left 0.2s linear;
 }
 
 .container.active {
