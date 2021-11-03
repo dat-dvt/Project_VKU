@@ -208,7 +208,7 @@ const app = {
                 sidebar.style.display = 'none';
                 setTimeout(function() {
                     sidebar.style.display = 'initial';
-                }, 200)
+                }, 300)
                 _this.isShrinkSidebar = true;
                 shrinkSidebar()
             }
