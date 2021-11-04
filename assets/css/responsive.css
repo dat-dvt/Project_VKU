@@ -9,6 +9,11 @@
     .sidebar__nav-item {
     
     }
+
+    /* Form */
+    .form-btn.btn--search {
+        margin-top: 0;
+    }
 }
 
 /* Tablet */
@@ -16,6 +21,27 @@
     .hide-on-tablet {
         display: none;
     }
+
+    /* Search result */
+    /* .col:first-child .result__item-info {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -8px;
+        margin-right: -8px;
+    }
+
+    .col:first-child .result__info-section {
+        width: 50%;
+        padding: 0 8px;
+    }
+
+    .result__info-section {
+        margin-top: 5px;
+    } */
+
+
+
+
 }
 
 
@@ -76,4 +102,7 @@
         padding: 0 15px;
     }
 
+
+    /* Search result */
+   
 }

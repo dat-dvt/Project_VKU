@@ -23,6 +23,7 @@ const app = {
     suvnavHeight: 0,
     currentTab: 0,
     currentSidebarWidth: 250,
+    VKUtitle: ['VKU - Trang web quản lý KTX', 'Đăng ký nội trú - VKU Admin', 'Thanh toán tiền phòng - VKU Admin', 'Thanh toán tiền điện - VKU Admin', 'Documentation - VKU Dormitory'],
 
     config: JSON.parse(localStorage.getItem(VKU_STORAGE_KEY) || '{}'),
 
@@ -83,6 +84,19 @@ const app = {
         }
 
 
+        // Handle clear validate
+        function handleClearAllError() {
+            const formMessages = $$('.form-message')
+            const formGroups = $$('.form-group')
+            formMessages.forEach(formMessage => {
+                formMessage.innerText = ''
+            })
+
+            formGroups.forEach(formGroup => {
+                formGroup.classList.remove('invalid')
+            })
+        }
+
         // Handle switch tab
         function handleSwichTab (currentTab) {
             const activeTab = $('.container.active')
@@ -109,6 +123,10 @@ const app = {
                 subnavItems[currentTab - 1].classList.add('active')
                 sidebarItems[1].classList.contains('active') && sidebarItems[1].classList.remove('active')
             }
+
+            handleClearAllError()
+            document.title = _this.VKUtitle[currentTab]
+            
             _this.setConfig('currentTab', currentTab)
         }
 
@@ -220,6 +238,7 @@ const app = {
             _this.currentTab = _this.config.currentTab || 0;
             handleSwichTab(_this.currentTab)
         })()
+
 
     },
 

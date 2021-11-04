@@ -23,6 +23,7 @@ html {
 }
 
 body {
+    scroll-behavior: smooth;
     background-color: #e5e5e5;
     -webkit-tap-highlight-color: transparent;
 }
