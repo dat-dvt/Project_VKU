@@ -85,10 +85,26 @@
                         </a>
                     </div>
                 </div>
+                <div class="sidebar__nav-item">
+                    <div class="sidebar__item-container">
+                        <a href="#" class="sidebar__container-link">
+                            <i class="far fa-credit-card sidebar__container-icon"></i>
+                            <span class="sidebar__container-content">Bảng giá</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="sidebar__nav-item">
+                    <div class="sidebar__item-container">
+                        <a href="#" class="sidebar__container-link">
+                            <i class="far fa-comment-dots sidebar__container-icon" style="font-size: 2rem;"></i>
+                            <span class="sidebar__container-content">Liên hệ</span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- Container -->
-        <div class="container tab-home mb-60 active" id="tab-home">
+        <div class="container tab-home mb-60" id="tab-home">
             <div class="container__header mb-30">
                 <div>
                     <div class="container__header-logo">
@@ -135,11 +151,11 @@
             <div class="container__section mb-30">
                 <div class="container__section-content">
                     <div class="content__noti">
-                        <div class="content__noti-message">
+                        <div class="content__noti-message message--error">
                             <i class="fas fa-exclamation-circle content__noti-message-icon"></i>
                             <span>Chưa tới đợt đăng ký KTX mới</span>
                         </div>
-                        <p class="content__noti-description">Vui lòng truy cập để biết thêm thông tin:</p>
+                        <p class="content__noti-description description--bold">Vui lòng truy cập để biết thêm thông tin:</p>
                         <ul class="content__noti-list">
                             <li class="content__noti-item">
                                 <span>Website:</span>
@@ -523,7 +539,7 @@
                             </div>
                         </div>
                         <div class="container__section-submit mb-20">
-                            <button class="btn form-btn form-btn--submit">
+                            <button class="btn form-btn btn--primary">
                                 <i class="fas fa-check-circle"></i>
                                 <span>Đăng ký</span>
                             </button>
@@ -533,7 +549,6 @@
                             </label>
                             <input type="reset" style="display: none;" id="reset-btn" class="form-reset">
                         </div>
-
                     </form>
                 </div>
             </div>
@@ -561,7 +576,6 @@
                     </li>
                 </ul>
             </div>
-
             <div class="container__section mb-30">
                 <div class="container__section-content">
                     <form action="POST" class="grid content__form" id="search-form">
@@ -578,7 +592,7 @@
                                     </div>
                                     <div class="col l-4 m-12 c-12">
                                         <div class="container__section-submit">
-                                            <button class="btn form-btn form-btn--submit btn--search">
+                                            <button class="btn form-btn btn--primary btn--search">
                                                 <i class="fas fa-search"></i>
                                                 <span>Tìm kiếm</span>
                                             </button>
@@ -737,7 +751,7 @@
                                     </div>
                                     <div class="col l-4 m-12 c-12">
                                         <div class="container__section-submit">
-                                            <button class="btn form-btn form-btn--submit btn--search">
+                                            <button class="btn form-btn btn--primary btn--search">
                                                 <i class="fas fa-search"></i>
                                                 <span>Tìm kiếm</span>
                                             </button>
@@ -868,6 +882,281 @@
                                             </a>
                                         </li>
                                     </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mb-60">
+            <div class="container__header mb-30">
+                <div>
+                    <div class="container__header-logo">
+                        <i class="far fa-credit-card container__header-logo-icon"></i>
+                        <div class="container__header-logo-content">&nbsp;Bảng giá</div>
+                    </div>
+                    <p class="container__header-description">Giải pháp quản lí hoàn hảo đáp ứng mọi nhu cầu cho người dùng</p>
+                </div>
+                <ul class="container__breadcrumb">
+                    <li class="breadcrumb__item">
+                        <i class="fas fa-home"></i>
+                        <span>/</span>
+                    </li>
+                    <li class="breadcrumb__item">
+                        <a href="#" class="breadcrumb__item-link is-ghost">Bảng giá</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="container__section">
+                <div class="container__section-content">
+                    <div class="content__noti">
+                        <div class="content__noti-message message--info">
+                            <span>Trải nghiệm 30 ngày</span>
+                        </div>
+                        <p class="content__noti-description description--thin">Để bắt đầu sử dụng phần mềm quản lý tiện dụng, tiết kiệm chi phí nhất</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container__section">
+                <div class="container__section-content">
+                    <div class="container__section-container mb-16">
+                        <div class="grid section-price__list">
+                            <div class="row">
+                                <div class="col l-4 m-6 c-12 mb-30">
+                                    <div class="price__item">
+                                        <div class="price__item-header">
+                                            <h2 class="price__header-name">Gói thường</h2>
+                                        </div>
+                                        <ul class="price__item-body">
+                                            <li class="price__body-section">
+                                                <span class="price__section-value">100.000 vnđ</span>
+                                                <span class="price__section-time">1 tháng</span>
+                                            </li>
+                                            <li class="price__body-section">
+                                                <div class="price__section-users">
+                                                    <span>3&nbsp;</span>người dùng
+                                                </div>
+                                            </li>
+                                            <li class="price__body-section">
+                                                <div class="price__section-benefit">
+                                                    <i class="fas fa-check price__benefit-icon"></i>
+                                                    <span class="price__benefit-title">Quản lí hợp đồng</span>
+                                                </div>
+                                            </li>
+                                            <li class="price__body-section">
+                                                <div class="price__section-benefit">
+                                                    <i class="fas fa-check price__benefit-icon"></i>
+                                                    <span class="price__benefit-title">Quản lí sinh viên thuê</span>
+                                                </div>
+                                            </li>
+                                            <li class="price__body-section">
+                                                <div class="price__section-benefit">
+                                                    <i class="fas fa-check price__benefit-icon"></i>
+                                                    <span class="price__benefit-title">Quản lí thu chi</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <div class="price__item-register">
+                                            <button class="btn btn--primary btn--large price-btn--register">Đăng kí</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col l-4 m-6 c-12 mb-30">
+                                    <div class="price__item">
+                                        <div class="price__item-header">
+                                            <h2 class="price__header-name">Gói dịch vụ</h2>
+                                        </div>
+                                        <ul class="price__item-body">
+                                            <li class="price__body-section">
+                                                <span class="price__section-value">3.000.000 vnđ</span>
+                                                <span class="price__section-time">1 tháng</span>
+                                            </li>
+                                            <li class="price__body-section">
+                                                <div class="price__section-users">
+                                                    <span>5 - 6&nbsp;</span>người dùng
+                                                </div>
+                                            </li>
+                                            <li class="price__body-section">
+                                                <div class="price__section-benefit">
+                                                    <i class="fas fa-check price__benefit-icon"></i>
+                                                    <span class="price__benefit-title">Quản lí hợp đồng</span>
+                                                </div>
+                                            </li>
+                                            <li class="price__body-section">
+                                                <div class="price__section-benefit">
+                                                    <i class="fas fa-check price__benefit-icon"></i>
+                                                    <span class="price__benefit-title">Quản lí sinh viên thuê</span>
+                                                </div>
+                                            </li>
+                                            <li class="price__body-section">
+                                                <div class="price__section-benefit">
+                                                    <i class="fas fa-check price__benefit-icon"></i>
+                                                    <span class="price__benefit-title">Quản lí thu chi</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <div class="price__item-register">
+                                            <button class="btn btn--primary btn--large price-btn--register">Đăng kí</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col l-4 m-6 c-12 mb-30">
+                                    <div class="price__item">
+                                        <div class="price__item-header">
+                                            <h2 class="price__header-name">Gói dịch vụ đặc biệt</h2>
+                                        </div>
+                                        <ul class="price__item-body">
+                                            <li class="price__body-section">
+                                                <span class="price__section-value">4.100.000 vnđ</span>
+                                                <span class="price__section-time">1 tháng</span>
+                                            </li>
+                                            <li class="price__body-section">
+                                                <div class="price__section-users">
+                                                    <span>8&nbsp;</span>người dùng
+                                                </div>
+                                            </li>
+                                            <li class="price__body-section">
+                                                <div class="price__section-benefit">
+                                                    <i class="fas fa-check price__benefit-icon"></i>
+                                                    <span class="price__benefit-title">Quản lí hợp đồng</span>
+                                                </div>
+                                            </li>
+                                            <li class="price__body-section">
+                                                <div class="price__section-benefit">
+                                                    <i class="fas fa-check price__benefit-icon"></i>
+                                                    <span class="price__benefit-title">Quản lí sinh viên thuê</span>
+                                                </div>
+                                            </li>
+                                            <li class="price__body-section">
+                                                <div class="price__section-benefit">
+                                                    <i class="fas fa-check price__benefit-icon"></i>
+                                                    <span class="price__benefit-title">Quản lí thu chi</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <div class="price__item-register">
+                                            <button class="btn btn--primary btn--large price-btn--register">Đăng kí</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mb-60 active">
+            <div class="container__header mb-30">
+                <div>
+                    <div class="container__header-logo">
+                        <i class="far fa-comment-dots container__header-logo-icon"></i>
+                        <div class="container__header-logo-content">&nbsp;Liên hệ</div>
+                    </div>
+                    <p class="container__header-description">Cung cấp giải pháp quản lý toàn diện người dùng.</p>
+                </div>
+                <ul class="container__breadcrumb">
+                    <li class="breadcrumb__item">
+                        <i class="fas fa-home"></i>
+                        <span>/</span>
+                    </li>
+                    <li class="breadcrumb__item">
+                        <a href="#" class="breadcrumb__item-link is-ghost">Liên hệ</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="container__section">
+                <div class="container__section-content container--contact">
+                    <div class="grid">
+                        <div class="row">
+                            <div class="col l-6 m-12 c-12">
+                                <div class="content__noti">
+                                    <div class="content__noti-message message--notify">
+                                        <span>Liên hệ với chúng tôi</span>
+                                    </div>
+                                    <div class="content__contact-list">
+                                        <div class="content__contact-item mb-16">
+                                            <div class="contact__item-icon">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                            </div>
+                                            <div class="contact__item-info">
+                                                <span class="contact__info-title mb-4">Địa chỉ: </span>
+                                                <div class="contact__info-name">
+                                                    <span class="mb-8 is-active">Đường 470 Trần Đại, quận Ngũ Hành Sơn, thành phố Đà Nẵng</span>    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="content__contact-item mb-16">
+                                            <div class="contact__item-icon">
+                                                <i class="fas fa-phone"></i>
+                                            </div>
+                                            <div class="contact__item-info">
+                                                <span class="contact__info-title mb-4">Phone: </span>
+                                                <div class="contact__info-name">
+                                                    <span class="mb-8 is-active">(+84) 84 204 0902</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="content__contact-item mb-16">
+                                            <div class="contact__item-icon">
+                                                <i class="fas fa-envelope"></i>
+                                            </div>
+                                            <div class="contact__item-info">
+                                                <span class="contact__info-title mb-4">Email: </span>
+                                                <div class="contact__info-name">
+                                                    <span class="mb-8 is-active">phnhi20it12@vku.udn.vn</span>
+                                                    <span class="mb-8 is-active">ntpanh20it12@vku.udn.vn</span>
+                                                    <span class="mb-8 is-active">mtkmy20it12@vku.udn.vn</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col l-6 m-12 c-12">
+                                <div class="content__noti">
+                                    <div class="content__noti-message message--contact">
+                                        <span>Để lại lời nhắn của bạn</span>
+                                    </div>
+                                    <form action="POST" class="grid content__form" id="contact-form">
+                                        <div class="container__section-container mb-26">
+                                            <div class="grid">
+                                                <div class="row">
+                                                    <div class="col l-12 m-12 c-12 mb-16">
+                                                        <div class="form-group">
+                                                            <input id="contactid" name="contactid" type="text" placeholder="Họ và Tên" class="form-control form-control--contact">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col l-6 m-6 c-12 mb-16">
+                                                        <div class="form-group">
+                                                            <input id="subject" name="subject" type="text" placeholder="Subject" class="form-control form-control--contact">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col l-6 m-6 c-12 mb-16">
+                                                        <div class="form-group">
+                                                            <input id="contactphone" name="contactphone" type="tel" placeholder="Số điện thoại" class="form-control form-control--contact">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col l-12 m-12 c-12 mb-16">
+                                                        <div class="form-group">
+                                                            <input id="contactemail" name="contactemail" type="email" placeholder="Email" class="form-control form-control--contact">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col l-12 m-12 c-12 mb-16">
+                                                        <div class="form-group">
+                                                            <textarea id="contactmessage" name="contactmessage" placeholder="Để lại lời nhắn cho chúng tôi" class="form-control form-control--contact input--message"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="container__section-submit mb-20">
+                                            <button class="btn form-btn btn--primary">
+                                                <i class="fas fa-paper-plane"></i>
+                                                <span>Gửi Tin Nhắn</span>
+                                            </button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
