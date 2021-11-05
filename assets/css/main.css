@@ -166,6 +166,10 @@
     white-space: normal;
 }
 
+.main.has--shrink-sidebar .sidebar__nav-item .sidebar__item-container  {
+    padding-right: 0;
+}
+
 .main.has--shrink-sidebar .sidebar__nav-item:hover .sidebar__item-container {
     width: 230px;
     display: block;
@@ -392,6 +396,7 @@
 
 .content__noti-message.message--info {
     font-weight: 700;
+    color: var(--primary-color);
 }
 
 .content__noti-message.message--notify {
