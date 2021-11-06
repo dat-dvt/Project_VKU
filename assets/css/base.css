@@ -57,6 +57,19 @@ i {
     background-color: #e9ecef !important;
 }
 
+.br-tl-tr-3 {
+    border-radius: 3px 3px 0 0 !important;
+}
+
+.br-bl-br-3 {
+    border-radius: 0 0 3px 3px !important;
+}
+
+.is-higher {
+    position: relative;
+    z-index: 5;
+}
+
 .mt-4 {
     margin-top: 4px !important;
 }

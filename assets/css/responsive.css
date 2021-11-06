@@ -19,6 +19,11 @@
     .content__contact-list {
         width: 100%;
     }
+
+    /* Footer */
+    .footer__container {
+        padding: 40px 20px;
+    }
 }
 
 /* Tablet */

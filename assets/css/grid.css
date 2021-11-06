@@ -382,6 +382,10 @@
         max-width: 100%;
     }
 
+    .l-o-0-5 {
+        margin-left: 4.16667%;
+    }
+
     .l-o-1 {
         margin-left: 8.33333%;
     }
@@ -543,6 +547,10 @@
     .wide .l-12 {
         flex: 0 0 100%;
         max-width: 100%;
+    }
+
+    .wide .l-o-0-5 {
+        margin-left: 4.16667%;
     }
 
     .wide .l-o-1 {
